@@ -1,6 +1,9 @@
 package Menu;
 
 import Login.LoginStud;
+import Student.ApplyRoom;
+import Student.Payment;
+import Student.StatusCheck;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -37,6 +40,7 @@ public class StudentMainMenu extends javax.swing.JFrame {
         jApply = new javax.swing.JButton();
         jCheck = new javax.swing.JButton();
         jLogout = new javax.swing.JButton();
+        jPayment = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Hostel Registration");
@@ -54,6 +58,11 @@ public class StudentMainMenu extends javax.swing.JFrame {
 
         jCheck.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jCheck.setText("Check Status");
+        jCheck.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckActionPerformed(evt);
+            }
+        });
 
         jLogout.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLogout.setText("Logout");
@@ -63,21 +72,30 @@ public class StudentMainMenu extends javax.swing.JFrame {
             }
         });
 
+        jPayment.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jPayment.setText("Payment");
+        jPayment.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPaymentActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(129, 129, 129)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCheck, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jApply, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(121, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(107, 107, 107))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(129, 129, 129)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPayment, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCheck, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jApply, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -88,22 +106,33 @@ public class StudentMainMenu extends javax.swing.JFrame {
                 .addComponent(jApply, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jCheck, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
+                .addGap(18, 18, 18)
+                .addComponent(jPayment, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jApplyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jApplyActionPerformed
-        
+        new ApplyRoom().setVisible(true);
     }//GEN-LAST:event_jApplyActionPerformed
 
     private void jLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLogoutActionPerformed
         this.dispose();
         new LoginStud().setVisible(true);
     }//GEN-LAST:event_jLogoutActionPerformed
+
+    private void jPaymentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPaymentActionPerformed
+        
+        new Payment().setVisible(true);
+    }//GEN-LAST:event_jPaymentActionPerformed
+
+    private void jCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckActionPerformed
+        new StatusCheck().setVisible(true);
+    }//GEN-LAST:event_jCheckActionPerformed
 
     /**
      * @param args the command line arguments
@@ -145,5 +174,6 @@ public class StudentMainMenu extends javax.swing.JFrame {
     private javax.swing.JButton jCheck;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JButton jLogout;
+    private javax.swing.JButton jPayment;
     // End of variables declaration//GEN-END:variables
 }
