@@ -18,7 +18,7 @@ public class LoginStaff extends javax.swing.JFrame {
     
     String adminUser = "admin";
     String adminPassword = "admin";
-    
+    Login login = new Login("admin","admin");
     
     
     /**
@@ -26,6 +26,7 @@ public class LoginStaff extends javax.swing.JFrame {
      */
     public LoginStaff() {
         initComponents();
+        
         this.setTitle("Login");
         this.setLocationRelativeTo(null);
         this.setResizable(false);
@@ -131,6 +132,8 @@ public class LoginStaff extends javax.swing.JFrame {
        
        boolean check = false;
        
+       login.setUsername(jtfUsername.getText());
+       login.setPassword(jpfPassword.getText());
        
         if(jtfUsername.getText() != null &&jpfPassword.getText() != null){
             if(jtfUsername.getText().contains(adminUser) && jpfPassword.getText().contains(adminPassword)){
